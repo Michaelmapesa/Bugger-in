@@ -16,5 +16,9 @@ $(document).ready(function(){
         let size1=$("#size").val();
         let crust1=$("#crust").val();
         let topping1=[];
-    })
+        $.each($("input[name='topping']:checked"),function(){
+            topping1.push($(this).val());
+        
+    });
+    console.log(topping1.join(", "));
 })
