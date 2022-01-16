@@ -1,6 +1,9 @@
 #section2{
     height: 600px;
     background-color: blue;
+    background-image: url(images/pizza-margherita.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #p2{
     color: white;
@@ -16,7 +19,45 @@
     color: goldenrod;
 }
 .btn{
-    color: ;
+    font-weight: bold;
     background-color: orange;
     border-radius: 20px;
 }
+#p3{
+    text-align: center;
+    color: green;
+    margin-top: 10px;
+    
+}
+#section3{
+    height: 580px;
+    background-color: #F0F0E1;
+    border-top: 3px solid #F0F0E1;
+}
+#col1{
+    background-color: orange;
+    height: 350px;
+}
+.video {
+    height: 400px;
+    
+ }
+ #about{
+     text-align: center;
+     margin-top: 30px;
+
+     
+ }
+ #video{
+     position: relative;
+     left: 60px;
+     background-color: orange;
+     
+ }
+ #duty{
+     font-weight: bold;
+ }
+ .variety>img{
+     height: 150px;
+     width: 150px;
+ }
