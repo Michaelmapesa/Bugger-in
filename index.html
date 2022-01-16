@@ -126,10 +126,13 @@
     <div class="container-fluid" id="section5">
       <p class="h3" id="p3">Order Here</p>
       <div class="card">
+        <br>
         <p class="h5" id="p4">Make Your Order Here And We Will Deliver On Your Request</p>
+        <br>
         <div class="row">
-          <div class="col-sm-6 variety">
+          <div class="col-sm-6 variety sect2">
             <form action="#">
+              <!--flavour-->
               <label for="select">Choose your flavour</label>
               <select class="form-select">
                 <option value="0">View flavours</option>
@@ -141,6 +144,7 @@
                 <option value="Buffalo Chicken Sticks">Buffalo Chicken Sticks</option>
               </select><br>
       
+              <!--size-->
               <label for="select">Pick your size</label> <br>
               <select class="form-select" id="size">
                 <option value="0">View sizes</option>
@@ -149,13 +153,32 @@
                 <option value="small">small @ 700ksh</option>
               </select> <br>
 
+              <!--crust-->
               <label for="crust">Pick your crust</label> <br>
               <select class="form-select" id="crust">
                 <option value="0">View crusts</option>
                 <option value="Crispy">Crispy @ 250ksh</option>
                 <option value="Stuffed">Stuffed @ 150ksh</option>
                 <option value="Gluten-free">Gluten @ 200ksh</option>
-              </select>
+              </select> <br>
+
+              <!--topping-->
+              <label for="Toppings">Toppings @ 50 Ksh</label><br>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="Mushrooms" name="Mushrooms" value="Mushrooms" checked>
+                <label class="form-check-label" for="Mushrooms">Mushrooms</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="Sausage" name="Sausage" value="Sausage">
+                <label class="form-check-label" for="Sausage">Sausage</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="Bacon" name="Bacon" value="Bacon">
+                <label class="form-check-label" for="Bacon">Bacon</label>
+              </div> <br><br>
+              <button type="submit" id="btn" class="btn">Order</button>
+
+
               
             </form>
 
