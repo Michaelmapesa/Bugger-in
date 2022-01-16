@@ -19,6 +19,7 @@ $(document).ready(function(){
         $.each($("input[name='topping']:checked"),function(){
             topping1.push($(this).val());
         
-    });
-    console.log(topping1.join(", "));
-})
+        });
+        console.log(topping1.join(", "));
+    });   
+});
