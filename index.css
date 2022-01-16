@@ -86,5 +86,18 @@
  }
  #p4{
      text-align: center;
-     
+
+ }
+ #section5{
+     height: 700px;
+ }
+ .sect2{
+     height: 500px;
+ }
+ #btn{
+    font-weight: bold;
+    background-color: orange;
+    border-radius: 20px;
+    height: 35px;
+    width: 80px;
  }
