@@ -4,6 +4,7 @@
     background-image: url(images/pizza-margherita.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 #p2{
     color: white;
@@ -33,6 +34,7 @@
     height: 580px;
     background-color: #F0F0E1;
     border-top: 3px solid #F0F0E1;
+
 }
 #col1{
     background-color: orange;
@@ -80,6 +82,9 @@
  .sect{
      position: relative;
      top: -80px;
-    
-    
+     
+ }
+ #p4{
+     text-align: center;
+     
  }
