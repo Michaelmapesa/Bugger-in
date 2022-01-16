@@ -22,13 +22,13 @@
             <ul class="navbar-nav">
                
               <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
+                <a class="nav-link" href="#section3">About us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Our varieties</a>
+                <a class="nav-link" href="#section4">Our varieties</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact us</a>
+                <a class="nav-link" href="#section6">Contact us</a>
               </li>
             </ul>
           </nav>
@@ -42,7 +42,7 @@
            <p class="h1" id="p1">PIZZA IN</p>
            <p class="h3" id="p2">BEST PIZZA IN TOWN</p>
            <br>
-           <button class="btn">ORDER NOW</button>
+           <button class="btn" id="button1">ORDER NOW</button>
        </div>
    </div>
 
@@ -125,16 +125,16 @@
     <!--section5-->
     <div class="container-fluid" id="section5">
       <p class="h3" id="p3">Order Here</p>
-      <div class="card">
+      <div class="card" id="card1">
         <br>
         <p class="h5" id="p4">Make Your Order Here And We Will Deliver On Your Request</p>
         <br>
-        <div class="row">
-          <div class="col-sm-6 variety sect2">
+        <div class="row" id="row2">
+          <div class="col-sm-4 variety sect2">
             <form action="#">
               <!--flavour-->
               <label for="select">Choose your flavour</label>
-              <select class="form-select">
+              <select class="form-select" id="name">
                 <option value="0">View flavours</option>
                 <option value="Chicken Tikka">Chicken Tikka</option>
                 <option value="PeriPeri Pizza">PeriPeri Pizza</option>
@@ -183,12 +183,43 @@
             </form>
 
           </div>
-          <div class="col-sm-6 variety">
+          <div class="col-sm-8 variety sect2">
+            <p class="h5">Here is summary of your order:</p>
+            <br>
+            <div id="orders">
+
+              <ul class="list-group">
+                <li class="list-group-item" id="pizzaname">Pizzaname</li>
+                <li class="list-group-item" id="pizzasize">Pizzasize</li>
+                <li class="list-group-item" id="pizzacrust">Third item</li>
+                <li class="list-group-item" id="pizzatopping">Pizzatopping</li>
+                <li class="list-group-item" id="totals">Totals</li>
+              </ul>
+              <p id="pizzatotal"></p>
+              <p id="totalbill"></p>
+              <p id="addedprice">Delivery charge 250 ksh</p>
+              <p id="finalmessage"></p>
+
+            </div>
+            <button class="btn" type="submit">Add order</button>
+            <button class="btn" type="submit">Checkout</button>
+            <button class="btn" type="submit">Delivery</button>
+          </div>
+          <div class="delivery">
+            <form action="">
+              <input type="text" id="name" class="form-control mb-3" placeholder="Name">
+              <input type="text" id="phone" class="form-control mb-3" placeholder="Phone number">
+              <input type="text" id="location" class="form-control mb-3" placeholder="Delivery locality">
+            </form>
 
           </div>
-
         </div>
       </div>
+    </div>
+
+    <!---section6---->
+    <div class="container-fluid" id="section6">
+      <p class="h3" id="p3">Contact us</p>
 
     </div>
    
@@ -198,6 +229,7 @@
 </body>
 
 <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="index.js"></script>
 
 </html>
