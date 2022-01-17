@@ -71,6 +71,8 @@ $(document).ready(function(){
             $("#btn").hide();
             $(".details").hide();
             $("#orders").show();
+            $("#add").show();
+            $("#check").show();
                
         }
         total = topping_value + crust_price + price;
@@ -85,9 +87,9 @@ $(document).ready(function(){
         $("#total").html(total);
 
         $("#add").click(function(){
-            let name1=$("#name");
-            let size1=$("#size");
-            let crust1=$("#crust");
+            let name1=$("#name").val();
+            let size1=$("#size").val();
+            let crust1=$("#crust").val();
             let topping1=[];
             $.each($("input[name='topping']:checked"),function(){
                 topping1.push($(this).val());
@@ -158,7 +160,7 @@ $(document).ready(function(){
             $(".delivery").show();
             $("#add").hide();
             $("#pizzatotal").hide();
-            $("#sub").hide();
+            $("#delivery").hide();
             
             let costDelivery=confirmTotal+250;
             console.log("Pay: "+costDelivery+"on delivery");
@@ -166,8 +168,14 @@ $(document).ready(function(){
 
         
     }); 
-    
-    let location=$("#location").val();
+    $("#sub").click(function(event){
+        event.preventDrfault();
+        $("#pizzatotal").hide();
+        $("#delivery").hide();
+        $("#sub").hide();
+        let costDelivery=confirmTotal+250;
+        console.log("Total bill is "+costDelivery);
+        let location=$("#location").val();
             let person=$("#name").val;
             let phone=$("#phone").val;
     
@@ -183,7 +191,11 @@ $(document).ready(function(){
             }
             
     
-        });
+
+    });
+            
+     event.preventDrfault();  
+    });
         
     
     
