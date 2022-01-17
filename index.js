@@ -11,7 +11,7 @@ class pizza{
 
 }
 $(document).ready(function(){
-    $("#button1").click(function(event){
+    $("#btn").click(function(event){
         let name1=$("#name").val();
         let size1=$("#size").val();
         let crust1=$("#crust").val();
@@ -62,11 +62,34 @@ $(document).ready(function(){
         if((crust1=="0")&&(size1=="0")){
             console.log("You have no selection");
             $("#orders").hide();
-            $("#button1").show();
+            $("#btn").show();
             $(".detail").show();
             alert("Please have a selection of your order");
 
         }
-        else
-    });   
+        else{
+            $("#btn").hide();
+            $(".details").hide();
+            $("#orders").show();
+               
+        }
+        total = topping_value + crust_price + price;
+        console.log(total);
+
+        confirmTotal=confirmTotal+total;
+        console.log(confirmTotal);
+
+        var addOrder = new pizza(name1,size1,crust1,topping1,total);
+        $("#list1").append('<ul><li id="pizzaname">'+addOrder.name+'<ul><li id="pizzasize">'+addOrder.size+'<ul><li id="pizzacrust">'+addOrder.crust+'<ul><li id="pizzatopping">'+addOrder.topping+'<ul><li id="totals">'+addOrder.total+'</li></ul>')
+        console.log(addOrder);
+    }); 
+    
+    $("#check").click(function(){
+        $("#check").hide();
+        $("#add").hide();
+        $("#delivery").show();
+        $("#addedprice").show();
+        console.log("Your bill amount to sh." + confirmTotal);
+
+    });
 });
