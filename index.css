@@ -119,3 +119,6 @@
  #orders{
      display: none;
  }
+ #check,#hide,#delivery,#add{
+     display: none;
+ }
