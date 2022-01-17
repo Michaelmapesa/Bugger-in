@@ -75,6 +75,19 @@ $(document).ready(function(){
         }
         total = topping_value + crust_price + price;
         console.log(total);
+        let confirmTotal=o;
+        confirmTotal=confirmTotal+total;
+
+        $("#pizzaname").html($("#name").val());
+        $("#pizzasize").html($("#size").val());
+        $("#pizzacrust").html($("#crust").val());
+        $("#pizzatopping").html(topping1.join(", "));
+        $("#total").html(total);
+
+        
+        
+
+
 
         confirmTotal=confirmTotal+total;
         console.log(confirmTotal);
@@ -92,4 +105,29 @@ $(document).ready(function(){
         console.log("Your bill amount to sh." + confirmTotal);
 
     });
+
+    $("#delivery").click(function(){
+        $("#list1").hide();
+        $(".h5").hide();
+        $("#sub").hide();
+        let costDelivery=confirmTotal+250;
+        console.log("Pay: "+costDelivery);
+        let location=$("#location").val();
+        let person=$("#name").val;
+        let phone=$("#phone").val;
+
+        if ($("#name").val() && $("#phone").val() && ("#location").val()!=""){
+           $("#finalmessage").append(person+",Thank you,your order will be delivered at " +location+ ". Prepare sh. "+costDelivery);  
+           $("#totalbill").hide();
+           $("finalmessage").show();
+        }
+        else{
+            alert("You have to fill delivery details");
+            $(".delivery").show();
+            $("#sub").show();
+        }
+        
+
+    });
+    
 });
