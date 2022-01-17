@@ -192,14 +192,26 @@
             <br>
             <div id="orders">
               <p class="h5">Here is summary of your order:</p>
+              <table class="table" id="piz">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th>Size</th>
+                    <th>Crust</th>
+                    <th>Topping</th>
+                    <th>total</th>
+                  </tr>
+                </thead>
+                <tbody id="list1">
+                  <tr>
+                    <td id="pizzaname"></td>
+                    <td id="pizzasize"></td>
+                    <td id="pizzacrust"></td>
+                    <td id="pizzatopping"></td>
+                    <td id="total"></td>
+                  </tr>
+              </table>    
 
-              <ul class="list-group" id="list1">
-                <li class="list-group-item" id="pizzaname">Pizzaname</li>
-                <li class="list-group-item" id="pizzasize">Pizzasize</li>
-                <li class="list-group-item" id="pizzacrust">Third item</li>
-                <li class="list-group-item" id="pizzatopping">Pizzatopping</li>
-                <li class="list-group-item" id="totals">Totals</li>
-              </ul>
               <p id="pizzatotal"></p>
               <p id="totalbill"></p>
               <p id="addedprice">Delivery charge 250 ksh</p>
@@ -231,8 +243,31 @@
     <!---section6---->
     <div class="container-fluid" id="section6">
       <p class="h3" id="p3">Contact us</p>
-
+      <div class="container-fluid" id="cardg">
+        <br>
+        <h3>CONTACT US</h3>
+        <form class="fomi">
+            <div class="form-group row">
+              <div class="col-xs-6" id="inp1">
+                  <label for="ex2"></label>
+                  <input class="form-control none usr" placeholder="Name..." value="" name="FNAME" class="required" id="mce-FNAME" id="ex2" id="usr" type="text">
+              </div>
+              <div class="col-xs-6" id="inp1">
+                  <label for="ex3"></label>
+                  <input class="form-control none " placeholder="Email..." type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" id="ex2">
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <textarea class="form-control none"  rows="7" id="comment" placeholder="Your message here..." ></textarea>
+            </div>
+            <br>
+            <button type="button" class="btn btn-secondary" id="btn1" >Submit</button>
+          </form>
     </div>
+    </div>
+
+    
    
     
       
@@ -242,5 +277,6 @@
 <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="index.js"></script>
+
 
 </html>
