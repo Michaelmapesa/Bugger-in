@@ -21,5 +21,29 @@ $(document).ready(function(){
         
         });
         console.log(topping1.join(", "));
+
+        switch(size1){
+            case "0":
+            break;
+            case "large":
+                price=1500;
+                console.log(price);
+               break;
+               case "medium":
+                   price=900;
+                   console.log("price");
+                   break;
+                   case "small":
+                       price=700;
+                       console.log(price);
+                       default:
+                           console.log("error,try solve!");
+        }
+
+        switch(crust1){
+            case "0":
+                crust_price=0;
+                break;
+        }
     });   
 });
