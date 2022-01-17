@@ -56,5 +56,17 @@ $(document).ready(function(){
                             default:
                                 console.log("price unavailable");
         }
+        let topping_value=topping1.length*50;
+        console.log("your topping value" + topping_value);
+
+        if((crust1=="0")&&(size1=="0")){
+            console.log("You have no selection");
+            $("#orders").hide();
+            $("#button1").show();
+            $(".detail").show();
+            alert("Please have a selection of your order");
+
+        }
+        else
     });   
 });
