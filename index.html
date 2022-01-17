@@ -193,7 +193,7 @@
             <div id="orders">
               <p class="h5">Here is summary of your order:</p>
 
-              <ul class="list-group">
+              <ul class="list-group" id="list1">
                 <li class="list-group-item" id="pizzaname">Pizzaname</li>
                 <li class="list-group-item" id="pizzasize">Pizzasize</li>
                 <li class="list-group-item" id="pizzacrust">Third item</li>
@@ -204,19 +204,20 @@
               <p id="totalbill"></p>
               <p id="addedprice">Delivery charge 250 ksh</p>
               <p id="finalmessage"></p>
-              <button class="btn" type="submit">Add order</button>
-              <button class="btn" type="submit">Checkout</button>
-
+             
             </div>
            
-            <button class="btn" type="submit">Delivery</button>
+            <button class="btn" type="submit" id="delivery">Delivery</button>
+            <button class="btn" type="submit" id="add">Add order</button>
+            <button class="btn" type="submit" id="check">Checkout</button>
+
 
             <div class="delivery">
               <form action="">
                 <input type="text" id="name" class="form-control mb-3" placeholder="Name">
                 <input type="text" id="phone" class="form-control mb-3" placeholder="Phone number">
                 <input type="text" id="location" class="form-control mb-3" placeholder="Delivery locality">
-                <button class="btn" type="submit">Order</button>
+                <button class="btn" type="submit" id="sub">Order</button>
 
               </form>
           </div>
