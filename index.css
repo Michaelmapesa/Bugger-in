@@ -113,3 +113,9 @@
      height: 350px;
      background-color: blue;
  }
+ .delivery{
+     display: none;
+ }
+ #orders{
+     display: none;
+ }
