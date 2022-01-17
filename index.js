@@ -1,202 +1,206 @@
-var price, crust_price, topping_price;
-let total=0;
-class pizza{
-    constructor(name,size,crust,topping,total){
-        this.name=name;
-        this.size=size;
-        this.crust=crust;
-        this.topping=topping;
-        this.total=total;
+
+var price , crust_price, topping_price ;
+let total = 0;
+function Getpizza( name,size,crust,topping, total ){
+  this.name = name;
+  this.size = size;
+  this.crust = crust;
+  this.topping = topping;
+  this.total = total;
+}
+
+
+// proceed button
+$(document).ready(function(){
+  // $("button.proceed").click(function(){
+  //   $("button.proceed").hide();
+  //   $("#information").hide();
+  //   $("div.choise").slideDown(1000);
+  // });
+  $("button#btn").click(function(event){
+   let pname = $("name").val();
+   let psize = $("#size").val();
+   let pcrust = $("#crust").val();
+   let ptopping = [];
+   $.each($("input[name='toppings']:checked"), function(){            
+       ptopping.push($(this).val());
+   });
+   console.log(ptopping.join(", "));
+
+   switch(psize){
+    case "0":
+      price =0;
+    break;
+    case "large":
+       price = 1200;
+       console.log(price);
+     break;
+     case "medium":
+       price = 850;
+       console.log("The price is "+price);
+     break;
+     case "small":
+       price = 600;
+       console.log(price);
+     default:
+       console.log("error"); 
+   }
+   switch(pcrust){
+      case "0":
+        crust_price = 0;
+      break;
+      case "Crispy":
+        crust_price = 200;
+      break;
+      case "Stuffed":
+        crust_price = 250;
+      break;
+      case "Gluten-free":
+        crust_price = 180;
+      break;
+      default:
+        console.log("No price"); 
+    }
+    let topping_value = ptopping.length*50;
+    console.log("toppins value" + topping_value);
+
+    if((psize == "0") && (pcrust == "0")){
+      console.log("nothing selected");
+      $("#btn").show();
+      $("#information").show();
+      $("div.choise").hide();
+      alert("Please select pizza size and crust"); 
+    }
+    else{
+      $("#add").show();
+      $("#check").show();
+      $(".detail").hide();
+      $("#orders.choise").show();
+      $("#orders").show();
     }
 
-}
-$(document).ready(function(){
-    $("#btn").click(function(event){
-        let name1=$("#name").val();
-        let size1=$("#size").val();
-        let crust1=$("#crust").val();
-        let topping1=[];
-        $.each($("input[name='topping']:checked"),function(){
-            topping1.push($(this).val());
-        
-        });
-        console.log(topping1.join(", "));
+    total = price + crust_price + topping_value;
+    console.log(total);
+    let checkoutTotal =0;
+    checkoutTotal = checkoutTotal + total;
 
-        switch(size1){
-            case "0":
-            break;
-            case "large":
-                price=1500;
-                console.log(price);
-               break;
-               case "medium":
-                   price=900;
-                   console.log("price");
-                   break;
-                   case "small":
-                       price=700;
-                       console.log(price);
-                       default:
-                           console.log("error,try solve!");
+    $("#pizzaname").html($("#name option:selected").val());
+    $("#pizzasize").html( $("#size option:selected").val());
+    $("#pizzacrust").html($("#crust option:selected").val());
+    $("#pizzatopping").html(ptopping.join(", "));
+    $("#total").html(total);
+    
+// Add pizza button
+    $("#add").click(function(){
+      let pname = $(".name option:selected").val();
+      let psize = $("#size option:selected").val();
+      let pcrust = $("#crust option:selected").val();
+      let ptopping = [];
+      $.each($("input[name='toppings']:checked"), function(){            
+          ptopping.push($(this).val());
+      });
+      console.log(ptopping.join(", "));
+      switch(psize){
+        case "0":
+          price =0;
+        break;
+        case "large":
+           price = 1200;
+           console.log(price);
+         break;
+         case "medium":
+           price = 850;
+           console.log("The price is "+price);
+         break;
+         case "small":
+           price = 600;
+           console.log(price);
+         default:
+           console.log("error"); 
+       }
+       switch(pcrust){
+          case "0":
+            crust_price = 0;
+          break;
+          case "Crispy":
+            crust_price = 200;
+          break;
+          case "Stuffed":
+            crust_price = 150;
+          break;
+          case "Gluten-free":
+            crust_price = 180;
+          break;
+          default:
+            console.log("No price"); 
         }
-
-        switch(crust1){
-            case "0":
-                crust_price=0;
-                break;
-                case "Crispy":
-                    crust_price=250;
-                    break;
-                    case "Stuffed":
-                        crust_price=150;
-                        break;
-                        case "Gluten-free":
-                            crust_price=200;
-                            break;
-                            default:
-                                console.log("price unavailable");
-        }
-        let topping_value=topping1.length*50;
-        console.log("your topping value" + topping_value);
-
-        if((crust1=="0")&&(size1=="0")){
-            console.log("You have no selection");
-            $("#orders").hide();
-            $("#btn").show();
-            $(".detail").show();
-            alert("Please have a selection of your order");
-
-        }
-        else{
-            $("#btn").hide();
-            $(".details").hide();
-            $("#orders").show();
-            $("#add").show();
-            $("#check").show();
-               
-        }
-        total = topping_value + crust_price + price;
+        let topping_value = ptopping.length*50;
+        console.log("toppins value" + topping_value);
+        total = price + crust_price + topping_value;
         console.log(total);
-        let confirmTotal=o;
-        confirmTotal=confirmTotal+total;
 
-        $("#pizzaname").html($("#name").val());
-        $("#pizzasize").html($("#size").val());
-        $("#pizzacrust").html($("#crust").val());
-        $("#pizzatopping").html(topping1.join(", "));
-        $("#total").html(total);
+        checkoutTotal = checkoutTotal + total;
+        console.log(checkoutTotal);
+      // constractor function
+      var newOrder = new Getpizza(pname, psize, pcrust,ptopping,total);
 
-        $("#add").click(function(){
-            let name1=$("#name").val();
-            let size1=$("#size").val();
-            let crust1=$("#crust").val();
-            let topping1=[];
-            $.each($("input[name='topping']:checked"),function(){
-                topping1.push($(this).val());
-            });
-            console.log(topping1.join(", "));
-            switch(size1){
-                case "0":
-               break;
-                case "large":
-                    price=1500;
-                    console.log(price);
-                   break;
-                   case "medium":
-                       price=900;
-                       console.log("price");
-                       break;
-                       case "small":
-                           price=700;
-                           console.log(price);
-                           default:
-                               console.log("error,try solve!");
-            }
-
-            switch(crust1){
-                case "0":
-                    crust_price=0;
-                    break;
-                    case "Crispy":
-                        crust_price=250;
-                        break;
-                        case "Stuffed":
-                            crust_price=150;
-                            break;
-                            case "Gluten-free":
-                                crust_price=200;
-                                break;
-                                default:
-                                    console.log("price unavailable");
-            }
-            let topping_value=topping1.length*50;
-            console.log("your topping value"+topping_value);
-            total=crust_price+price+topping_value;
-            console.log(total);
-
-            confirmTotal=confirmTotal+total;
-        console.log(confirmTotal);
-
-        var addOrder = new pizza(name1,size1,crust1,topping1,total);
-        $("#list1").append('<ul><li id="pizzaname">'+addOrder.name+'<ul><li id="pizzasize">'+addOrder.size+'<ul><li id="pizzacrust">'+addOrder.crust+'<ul><li id="pizzatopping">'+addOrder.topping+'<ul><li id="totals">'+addOrder.total+'</li></ul>')
-        console.log(addOrder);
-
-        });
-
-        $("#check").click(function(){
-            $("#check").hide();
-            $("#add").hide();
-            $("#delivery").show();
-            $("#addedprice").show();
-            console.log("Your bill amount to sh." + confirmTotal);
-            $("#pizzatotal").append("pay sh."+confirmTotal);
-
-    
-        });
-    
-        $("#delivery").click(function(){
-            $("#list1").hide();
-            $(".h5").hide();
-            $(".delivery").show();
-            $("#add").hide();
-            $("#pizzatotal").hide();
-            $("#delivery").hide();
-            
-            let costDelivery=confirmTotal+250;
-            console.log("Pay: "+costDelivery+"on delivery");
-            $("#totalbill").append("Your bill inclusion of delivery fee is"+costDelivery);
-
-        
-    }); 
-    $("#sub").click(function(event){
-        event.preventDrfault();
-        $("#pizzatotal").hide();
-        $("#delivery").hide();
-        $("#sub").hide();
-        let costDelivery=confirmTotal+250;
-        console.log("Total bill is "+costDelivery);
-        let location=$("#location").val();
-            let person=$("#name").val;
-            let phone=$("#phone").val;
-    
-            if ($("#name").val() && $("#phone").val() && ("#location").val()!=""){
-               $("#finalmessage").append(person+",Thank you,your order will be delivered at " +location+ ". Prepare sh. "+costDelivery);  
-               $("#totalbill").hide();
-               $("finalmessage").show();
-            }
-            else{
-                alert("You have to fill delivery details");
-                $(".delivery").show();
-                $("#sub").show();
-            }
-            
-    
+      $("#ordersmade").append('<tr><td id="pizzaname">'+newOrder.name +'</td><td id="pizzasize">' + newOrder.size + '</td><td id="pizzacrust">'+newOrder.crust + '</td><td id="pizzatopping">'+newOrder.topping+'</td><td id="totals">'+newOrder.total+'</td></tr>');
+      console.log(newOrder);
+      
+      
 
     });
-            
-     event.preventDrfault();  
+    // Checkout button
+    $("button#check").click(function(){ 
+      $("button#check").hide();
+      $("button#add").hide();
+      $("button.delivery").show();
+      $("#delivery").slideDown(1000);
+      console.log("Your total bills is sh. "+checkoutTotal);
+      $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
     });
-        
-    
-    
+
+    // home delivery button
+    $("button#delivery").click(function(){
+      $("#piz").hide();
+      $("#orders .h5").hide();
+      $(".delivery").slideDown(1000);
+      $("#addedprice").hide();
+      $("button#deliver").hide();
+      $("#pizzatotal").hide();
+      $("#delivery").hide();
+      let deliceryamount= checkoutTotal+150;
+      console.log("You will pay sh. "+deliceryamount+" on delivery");
+      $("#totalbill").append("Your bill plus delivery fee is: "+deliceryamount);
+    });
+
+    // when one clicks place order button
+    $("button#sub").click(function(event){
+      event.preventDefault();
+
+      $("#pizzatotal").hide();
+      $("#delivery").hide();
+      $("button#sub").hide();
+      $(".delivery").hide();
+      let deliceryamount= checkoutTotal+150;
+      console.log("Final Bill is: "+deliceryamount);
+      let person = $("input#name").val();
+      let phone = $("input#phone").val();
+      let location = $("input#location").val();
+
+      if ($("input#name").val() && $("input#phone").val() && $("input#location").val()!=""){
+  
+        $("#finalmessage").append(person+", We have recieved your order and it will be delivered to you at "+location+ ". Prepare sh. "+deliceryamount);
+        $("#totalbill").hide();
+        $("#finalmessage").slideDown(1200);
+      }
+      else {
+        alert("Please fill in the details for delivery!");
+        $(".delivery").show();
+        $("button#delivery").show();
+      }
+    });
+   event.preventDefault();
+  });
 });
+
