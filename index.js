@@ -10,13 +10,8 @@ function Getpizza( name,size,crust,topping, total ){
 }
 
 
-// proceed button
+// order btn
 $(document).ready(function(){
-  // $("button.proceed").click(function(){
-  //   $("button.proceed").hide();
-  //   $("#information").hide();
-  //   $("div.choise").slideDown(1000);
-  // });
   $("button#btn").click(function(event){
    let pname = $("name").val();
    let psize = $("#size").val();
@@ -32,15 +27,15 @@ $(document).ready(function(){
       price =0;
     break;
     case "large":
-       price = 1200;
+       price = 1500;
        console.log(price);
      break;
      case "medium":
-       price = 850;
+       price = 900;
        console.log("The price is "+price);
      break;
      case "small":
-       price = 600;
+       price = 700;
        console.log(price);
      default:
        console.log("error"); 
@@ -53,10 +48,10 @@ $(document).ready(function(){
         crust_price = 200;
       break;
       case "Stuffed":
-        crust_price = 250;
+        crust_price = 150;
       break;
       case "Gluten-free":
-        crust_price = 180;
+        crust_price = 200;
       break;
       default:
         console.log("No price"); 
@@ -90,7 +85,7 @@ $(document).ready(function(){
     $("#pizzatopping").html(ptopping.join(", "));
     $("#total").html(total);
     
-// Add pizza button
+// pizza
     $("#add").click(function(){
       let pname = $(".name option:selected").val();
       let psize = $("#size option:selected").val();
@@ -141,7 +136,7 @@ $(document).ready(function(){
 
         checkoutTotal = checkoutTotal + total;
         console.log(checkoutTotal);
-      // constractor function
+      // function
       var newOrder = new Getpizza(pname, psize, pcrust,ptopping,total);
 
       $("#ordersmade").append('<tr><td id="pizzaname">'+newOrder.name +'</td><td id="pizzasize">' + newOrder.size + '</td><td id="pizzacrust">'+newOrder.crust + '</td><td id="pizzatopping">'+newOrder.topping+'</td><td id="totals">'+newOrder.total+'</td></tr>');
@@ -150,7 +145,7 @@ $(document).ready(function(){
       
 
     });
-    // Checkout button
+    // Check btn
     $("button#check").click(function(){ 
       $("button#check").hide();
       $("button#add").hide();
@@ -160,7 +155,7 @@ $(document).ready(function(){
       $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
     });
 
-    // home delivery button
+    // delivery btn
     $("button#delivery").click(function(){
       $("#piz").hide();
       $("#orders .h5").hide();
@@ -174,7 +169,7 @@ $(document).ready(function(){
       $("#totalbill").append("Your bill plus delivery fee is: "+deliceryamount);
     });
 
-    // when one clicks place order button
+    // submit btn
     $("button#sub").click(function(event){
       event.preventDefault();
 
