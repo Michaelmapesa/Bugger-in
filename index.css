@@ -6,6 +6,11 @@
     background-size: cover;
     background-attachment: fixed;
 }
+#logo{
+    position: relative;
+    left: -350px;
+    font-weight: bold;
+}
 #p2{
     color: white;
     font-weight: bold;
