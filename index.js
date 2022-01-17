@@ -44,6 +44,17 @@ $(document).ready(function(){
             case "0":
                 crust_price=0;
                 break;
+                case "Crispy":
+                    crust_price=250;
+                    break;
+                    case "Stuffed":
+                        crust_price=150;
+                        break;
+                        case "Gluten-free":
+                            crust_price=200;
+                            break;
+                            default:
+                                console.log("price unavailable");
         }
     });   
 });
